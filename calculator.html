@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文理-快捷重命名工具 - 梦笔笙花工作室</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* 添加模态窗口样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="site-nav">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="梦笔笙花工作室 Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">首页</a></li>
+                <li><a href="about.html" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">关于我们</a></li>
+                <li><a href="products.html" class="active" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">产品展示</a></li>
+                <li><a href="news.html" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">新闻动态</a></li>
+                <li><a href="contact.html" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="product-detail-section">
+            <h2 class="section-title">文理-快捷重命名工具</h2>
+            <div class="product-detail">
+                <div class="product-info">
+                    <p class="product-version">版本：beta1.2</p>
+                    <p class="product-details">
+                        <span class="product-publisher">发布者：梦笔笙花工作室</span>
+                        <span class="product-date">发布日期：2025-01-14</span>
+                        <span class="product-tags">分类标签：工具</span>
+                    </p>
+                    <p class="product-description">这是一个简单的重命名工具，可以帮助你进行快速地的批量重命名操作。</p>
+                    <img src="images/产品展示/文理-快捷重命名/文理-快捷重命名工具.png" alt="文理-快捷重命名工具展示图" class="product-image">
+                </div>
+                <div class="product-actions">
+                    <a href="products.html" class="product-link product-button">返回</a>
+                    <a href="exe/文理beta1.2-Setup.exe" class="product-button">下载</a>
+                    <button id="downloadHelpButton" class="product-button">下载报警解决办法</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2023 梦笔笙花工作室. 版权所有.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        window.onload = function() {
+            // 获取模态窗口元素
+            var modal = document.getElementById("downloadHelpModal");
+            if (!modal) {
+                console.error("模态窗口元素未找到");
+                return;
+            }
+
+            // 获取打开模态窗口的按钮
+            var btn = document.getElementById("downloadHelpButton");
+            if (!btn) {
+                console.error("按钮元素未找到");
+                return;
+            }
+
+            // 获取关闭模态窗口的 <span> 元素
+            var span = document.getElementsByClassName("close")[0];
+            if (!span) {
+                console.error("关闭按钮元素未找到");
+                return;
+            }
+
+            // 当用户点击按钮时，打开模态窗口 
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            // 当用户点击 <span> (x), 关闭模态窗口
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+        }
+
+        // 阻止模态窗口滚动时主页面滚动
+        modal.addEventListener('wheel', function (e) {
+            e.stopPropagation();
+        }, { passive: false });
+    </script>
+
+    <!-- 添加模态窗口HTML -->
+    <div id="downloadHelpModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>下载报警解决办法</h2>
+            <p>当按下下载按钮后如果浏览器提示“通常不会下载 文理beta1.2-Setup.exe…… “请按照以下方法处理：（这里以edge浏览器为例）</p>
+            <ol>
+                <li>在下载窗口点击三个点按钮（①的位置）</li>
+                <img src="images/产品展示/文理-快捷重命名/下载疑问/下载步骤1.png" alt="下载步骤1">
+                <li>点击保留（②的位置）</li>
+                <img src="images/产品展示/文理-快捷重命名/下载疑问/下载步骤2.png" alt="下载步骤2">
+                <li>点击 显示详细信息（如图）</li>
+                <img src="images/产品展示/文理-快捷重命名/下载疑问/下载步骤3.png" alt="下载步骤3">
+                <li>点击仍然保留（如图）</li>
+                <img src="images/产品展示/文理-快捷重命名/下载疑问/下载步骤4.png" alt="下载步骤4">
+                <li>等待下载</li>
+                <li>点击打开文件（如图）</li>
+                <p>(注：也可以打开下载位置双击打开安装程序)</p>
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品展示 - 梦笔笙花工作室</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="site-nav">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="梦笔笙花工作室 Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">首页</a></li>
+                <li><a href="about.html" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">关于我们</a></li>
+                <li><a href="products.html" class="active" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">产品展示</a></li>
+                <li><a href="news.html" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">新闻动态</a></li>
+                <li><a href="contact.html" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="about-section">
+            <h2 class="section-title">我们的产品</h2>
+            <p class="section-content">我们将在此界面展示我们的程序和网站，并提供打开方式</p>
+        </section>
+        <!-- 新增的组件组 -->
+        <section class="products-section">
+            <div class="product-item">
+                <div class="product-info">
+                    <h3 class="product-title">随机抽取器</h3>
+                    <p class="product-version">版本：1.0</p>
+                    <p class="product-details">
+                        <span class="product-publisher">发布者：梦笔笙花工作室</span>
+                        <span class="product-date">发布日期：2023-01-01</span>
+                        <span class="product-tags">分类标签：工具 网站</span>
+                    </p>
+                    <p class="product-description">这是一个简单的随机抽取器工具，可以帮助你快速随机选择一个选项。</p>
+                </div>
+                <img src="images/产品展示/随机抽取器/随机抽取器网站.png" alt="随机抽取器展示图" class="product-image">
+                <a href="randomizer.html" class="product-link product-button">查看详情</a>
+            </div>
+            <div class="product-item">
+                <div class="product-info">
+                    <h3 class="product-title">文理-快捷重命名工具</h3>
+                    <p class="product-version">版本：beta1.2</p>
+                    <p class="product-details">
+                        <span class="product-publisher">发布者：梦笔笙花工作室</span>
+                        <span class="product-date">发布日期：2025-01-14</span>
+                        <span class="product-tags">分类标签：工具</span>
+                    </p>
+                    <p class="product-description">这是一个简单的重命名工具，可以帮助你进行快速地的批量重命名操作。</p>
+                </div>
+                <img src="images/产品展示/文理-快捷重命名/文理-快捷重命名工具.png" alt="文理-快捷重命名工具展示图" class="product-image">
+                <a href="calculator.html" class="product-link product-button">查看详情</a>
+            </div>
+            <!-- 可以根据需要添加更多的产品组件组 -->
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2023 梦笔笙花工作室. 版权所有.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

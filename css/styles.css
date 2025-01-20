@@ -1,0 +1,156 @@
+/* 全局样式 */
+body {
+    font-family: "Microsoft YaHei", sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 头部样式 */
+.site-header {
+    background: linear-gradient(to right top, #0797cf, #e6ecec); /* 自左下到右上的渐变色 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* 修改为相对定位 */
+    width: 100%;
+    z-index: 1000;
+    transition: background 0.5s ease; /* 添加背景渐变过渡效果 */
+}
+
+.site-nav {
+    display: flex;
+    justify-content: space-between; /* 修改为 space-between 以使Logo居左，导航栏居右 */
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    position: relative; /* 添加相对定位以便放置底板 */
+    width: 80px; /* 调整logo宽度大小 */
+    height: 80px; /* 调整logo高度大小 */
+    margin-left: 20px; /* 添加左边距 */
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    display: block; /* 确保图片填充整个logo区域 */
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-menu li {
+    margin-left: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #fff; /* 修改文字颜色为白色 */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #007bff;
+}
+
+/* 新增鼠标悬浮效果样式 */
+.nav-menu a.hover-effect {
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #00ff00, 0 0 15px #0000ff, 0 0 20px #ffff00, 0 0 25px #00ffff, 0 0 30px #ff00ff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* 主体内容样式 */
+.main-content {
+    flex: 1;
+    padding: 20px; /* 修改为20px，合理配置顶部间距 */
+}
+
+/* 欢迎文字样式 */
+.welcome-section {
+    margin-top: 40px;
+}
+
+.welcome-section h2,
+.section-title {
+    display: block; /* 使标题独占一行 */
+    text-align: center; /* 使标题居中显示 */
+    margin-bottom: 20px; /* 添加底部间距，使标题与产品展示内容有一定的间隔 */
+}
+
+.welcome-section p,
+.section-content {
+    display: block; /* 使段落独占一行 */
+    text-align: center; /* 使段落居中显示 */
+    margin-bottom: 40px; /* 增加底部间距，避免与产品展示窗口冲突 */
+}
+
+/* 产品展示样式 */
+.products-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    border: 1px solid #ddd;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px); /* 三个产品一行 */
+    box-sizing: border-box;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-link {
+    margin-top: 10px;
+    align-self: flex-end;
+}
+
+/* 新增按钮样式 */
+.product-button {
+    display: inline-block;
+    padding: 12px 24px; /* 增加按钮内边距 */
+    margin: 10px 0; /* 增加按钮外边距 */
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px; /* 圆角增加 */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 16px; /* 增加字体大小 */
+}
+
+.product-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* 鼠标悬停时放大按钮 */
+}
+
+/* 底部样式 */
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
