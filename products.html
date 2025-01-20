@@ -7,7 +7,28 @@
     <title>产品展示 - 梦笔笙花工作室</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
-
+/* 添加媒体查询以优化手机端显示 */
+@media (max-width: 768px) {
+    .products-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .product-item {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .product-image {
+        max-width: 100%;
+        height: auto;
+    }
+    .logo img {
+        width: 80px; /* 调整Logo宽度 */
+        height: auto;
+        display: block; /* 确保Logo块级元素 */
+        margin: 0 auto; /* 水平居中 */
+    }
+}
     </style>
 </head>
 
