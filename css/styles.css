@@ -49,7 +49,7 @@ body {
 }
 
 .nav-menu li {
-    margin-left: 10px; /* 修改: 将间距从20px缩小到10px */
+    margin-left: 10px;
 }
 
 .nav-menu a {
@@ -99,7 +99,6 @@ body {
 .products-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
 .product-item {
@@ -108,14 +107,32 @@ body {
     justify-content: space-between;
     align-items: stretch;
     border: 1px solid #ddd;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: calc(33.333% - 20px); /* 三个产品一行 */
+    padding: 40px; /* 内边距 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影 */
+    width: calc(33.333% - 40px); /* 调整宽度计算，确保每行3个组件 */
     box-sizing: border-box;
+    border-radius: 10px; /* 圆角半径 */
+    transition: transform 0.3s ease;
+    margin: 10px; /* 调整外边距 */
+}
+
+.product-item:hover {
+    transform: translateY(-5px); /* 鼠标悬停时向上移动 */
+}
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto; /* 居中显示 */
+    border: 4px solid #ddd; /* 增加边框宽度 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* 增加阴影 */
+    border-radius: 10px; /* 添加圆角 */
+    margin-top: 10px; /* 增加顶部外边距 */
 }
 
 .product-info {
     flex: 1;
+    margin-bottom: 10px; /* 增加底部外边距 */
 }
 
 .product-link {
@@ -192,4 +209,152 @@ body {
         display: block; /* 确保按钮块级元素 */
         padding: 10px; /* 增加按钮内边距 */
     }
+}
+
+/* 统一排版样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+.welcome-section {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.section-content {
+    line-height: 1.5;
+    text-align: left;
+    margin-bottom: -15px;
+}
+
+/* 组织架构图样式 */
+.org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* 添加相对定位以便放置连接线 */
+}
+
+.org-chart .level {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.org-chart .node {
+    border: 1px solid #333;
+    padding: 10px;
+    margin: 0 20px;
+    position: relative;
+    width: 150px;
+    text-align: center;
+}
+
+/* 添加连接线样式 */
+.org-chart .connection {
+    position: absolute;
+    border-top: 1px solid #333;
+}
+
+.org-chart .connection::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border-left: 1px solid #333;
+    height: 20px; /* 调整连接线长度 */
+}
+
+.org-chart .connection::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 1px solid #333;
+    height: 20px; /* 调整连接线长度 */
+}
+
+.org-chart .connection[from="room_leader"][to="manager_a"]::before {
+    left: calc(50% + 175px); /* 调整位置 */
+}
+
+.org-chart .connection[from="room_leader"][to="manager_a"]::after {
+    left: calc(50% - 175px); /* 调整位置 */
+}
+
+.org-chart .connection[from="room_leader"][to="manager_b"]::before {
+    left: calc(50% + 175px); /* 调整位置 */
+}
+
+.org-chart .connection[from="room_leader"][to="manager_b"]::after {
+    left: calc(50% - 175px); /* 调整位置 */
+}
+
+.org-chart .connection[from="manager_a"][to="member_a1"]::before {
+    left: calc(50% + 175px); /* 调整位置 */
+}
+
+.org-chart .connection[from="manager_a"][to="member_a1"]::after {
+    left: calc(50% - 175px); /* 调整位置 */
+}
+
+.org-chart .connection[from="manager_a"][to="member_a2"]::before {
+    left: calc(50% + 175px); /* 调整位置 */
+}
+
+.org-chart .connection[from="manager_a"][to="member_a2"]::after {
+    left: calc(50% - 175px); /* 调整位置 */
+}
+
+.org-chart .connection[from="manager_b"][to="member_b1"]::before {
+    left: calc(50% + 175px); /* 调整位置 */
+}
+
+.org-chart .connection[from="manager_b"][to="member_b1"]::after {
+    left: calc(50% - 175px); /* 调整位置 */
+}
+
+.org-chart .connection[from="manager_b"][to="member_b2"]::before {
+    left: calc(50% + 175px); /* 调整位置 */
+}
+
+.org-chart .connection[from="manager_b"][to="member_b2"]::after {
+    left: calc(50% - 175px); /* 调整位置 */
 }
