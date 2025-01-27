@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>迷你彩码通 - 梦笔笙花工作室</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .product-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .product-image {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            display: block;
+        }
+        .image-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .image-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .prev-button {
+            left: 10px;
+        }
+        .next-button {
+            right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="site-nav">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="梦笔笙花工作室 Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">首页</a></li>
+                <li><a href="about.html" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">关于我们</a></li>
+                <li><a href="products.html" class="active" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">产品展示</a></li>
+                <li><a href="news.html" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">新闻动态</a></li>
+                <li><a href="contact.html" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main-content">
+        <section class="product-detail-section">
+            <h2 class="section-title">迷你彩码通</h2>
+            <div class="product-detail">
+                <div class="product-info">
+                    <p class="product-version">版本：1.0</p>
+                    <p class="product-details">
+                        <span class="product-publisher">发布者：梦笔笙花工作室</span>
+                        <span class="product-date">发布日期：2025年1月27日</span>
+                        <span class="product-tags">分类标签：工具 网站</span>
+                    </p>
+                    <p class="product-description">这是一个简单的迷你世界彩字转换器，可以帮助你将RGB彩色代码或其它颜色代码转为迷你世界的彩码，也可以使用调色板选色</p>
+                    <div class="product-image-container">
+                        <img src="images/产品展示/迷你彩码通/迷你彩码通首页.png" alt="迷你彩码通展示图1" class="product-image" id="productImage0" style="display: block;">
+                        <img src="images/产品展示/迷你彩码通/迷你彩码通使用.png" alt="迷你彩码通展示图2" class="product-image" id="productImage1" style="display: none;">
+                        <button class="image-button prev-button" onclick="changeImage(-1)">&#10094;</button>
+                        <button class="image-button next-button" onclick="changeImage(1)">&#10095;</button>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <span class="product-publisher">使用方法：</span>
+                    <span class="product-date">一、输入转换</span>
+                    <span class="product-tags">1. 输入颜色代码</span>
+                    <span class="product-tags">2. 点击“转换”按钮</span>
+                    <span class="product-tags">3. 获取结果</span>
+                    <span class="product-date">二、取色器取色（手机端暂不可用）</span>
+                    <span class="product-tags">1. 点击“取色器”按钮</span>
+                    <span class="product-tags">2. 选取你需要的颜色</span>
+                    <span class="product-tags">3. 点击“转换”按钮</span>
+                    <span class="product-tags">4. 获取结果</span>
+                    <span class="product-date">三、调色板调色</span>
+                    <span class="product-tags">1. 点击调色板功能</span>
+                    <span class="product-tags">2. 调整颜色至需要的颜色（手机端可能会需要点击“更多”按钮）</span>
+                    <span class="product-tags">3. 点击“确认”按钮自动填充</span>
+                    <span class="product-date">注：如输入或选取后未自动转换，请点击“转换”按钮</span>
+                </div>
+                <div class="product-actions">
+                    <a href="products.html" class="product-link product-button">返回</a>
+                    <a href="https://spoo.me/minicodego" class="product-button">在线使用</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <p>&copy; 2023 梦笔笙花工作室. 保留所有权利.</p>
+    </footer>
+    <script src="js/main.js"></script>
+    <script>
+        const images = [
+            "images/产品展示/迷你彩码通/迷你彩码通首页.png",
+            "images/产品展示/迷你彩码通/迷你彩码通使用.png"
+        ];
+        let currentIndex = 0;
+
+        function changeImage(step) {
+            console.log("Changing image with step:", step);
+            // 更新当前索引
+            currentIndex += step;
+            // 确保 currentIndex 在有效范围内
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            // 隐藏所有图片
+            for (let i = 0; i < images.length; i++) {
+                document.getElementById('productImage' + i).style.display = 'none';
+            }
+            // 显示新图片
+            document.getElementById('productImage' + currentIndex).style.display = 'block';
+            console.log("Displayed image index:", currentIndex);
+        }
+
+        // 默认显示第一张图片
+        window.onload = function() {
+            console.log("Page loaded, initializing first image.");
+            // 动态创建图片元素
+            const productImageContainer = document.querySelector('.product-image-container');
+            for (let i = 0; i < images.length; i++) {
+                const img = document.createElement('img');
+                img.src = images[i];
+                img.alt = `迷你彩码通展示图${i + 1}`;
+                img.className = 'product-image';
+                img.id = `productImage${i}`;
+                img.style.display = 'none';
+                productImageContainer.appendChild(img);
+            }
+            // 确保图片元素存在后再调用 changeImage
+            if (document.getElementById('productImage0')) {
+                changeImage(0);
+            } else {
+                console.error("Product image elements not found.");
+            }
+        };
+    </script>
+</body>
+
+</html>
